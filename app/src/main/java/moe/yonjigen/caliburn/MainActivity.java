@@ -40,8 +40,6 @@ public class MainActivity extends Activity {
 
     void excuADB() {
         adbCommonList.add("sh /sdcard/Android/data/moe.shizuku.privileged.api/files/start.sh");
-        adbCommonList.add("sh /sdcard/Android/data/moe.shizuku.privileged.api/files/start.sh");
-        adbCommonList.add("sh /sdcard/Android/data/moe.shizuku.privileged.api/files/start.sh");
         adbCommonList.add("sh /data/data/me.piebridge.brevent/brevent.sh");
         adbShell.setAdbShellListener(new AdbShell.AdbShellListener() {
             @Override
