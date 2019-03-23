@@ -26,13 +26,15 @@ public class MainActivity extends Activity {
     }
 
     public void excuShell() {
+        textView.setText("正在启动无线调试，请赋予Root权限\n");
         shellCommonList.add("setprop service.adb.tcp.port 5555");
         shellCommonList.add("stop adbd");
         shellCommonList.add("start adbd");
         rootShell.execCommands(shellCommonList, new RootShell.Callback() {
             @Override
             public void onShellOutput(String outputString) {
-                textView.setText(outputString);
+                textView.setText(textView.getText() + outputString);
+                textView.setText("无线调试已启动\n");
                 excuADB();
             }
         });
